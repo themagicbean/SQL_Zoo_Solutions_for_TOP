@@ -48,3 +48,17 @@ FROM nobel
 WHERE yr < 1910 AND subject = 'Medicine'
 OR yr >= 2004 AND subject = 'Literature'
 
+11. SELECT *
+FROM nobel
+WHERE winner = 'Peter Grünberg'
+
+//alt-0252 is keycode, so long as you input it no need for special searches or CAST usage
+
+12. SELECT * 
+FROM nobel
+WHERE winner = 'Eugene O\'Neill'
+
+// standard backslash to escape
+
+13. 
+
