@@ -22,7 +22,7 @@ WHERE 1980 <= yr
 AND yr <= 1989
 AND subject = 'Literature'
 
-//can't use a <= yr <= b
+/*can't use a <= yr <= b */
 
 6. SELECT * FROM nobel
 WHERE winner IN ('Theodore Roosevelt', 'Woodrow Wilson', 'Jimmy Carter', 'Barack Obama')
@@ -31,7 +31,7 @@ WHERE winner IN ('Theodore Roosevelt', 'Woodrow Wilson', 'Jimmy Carter', 'Barack
 FROM nobel
 WHERE winner LIKE 'John%'
 
-//must use single quotes around like entry
+/*must use single quotes around like entry*/
 
 8. SELECT * 
 FROM nobel
@@ -52,13 +52,23 @@ OR yr >= 2004 AND subject = 'Literature'
 FROM nobel
 WHERE winner = 'Peter Grünberg'
 
-//alt-0252 is keycode, so long as you input it no need for special searches or CAST usage
+/*alt-0252 is keycode, so long as you input it no need for special searches or CAST usage*/
 
 12. SELECT * 
 FROM nobel
 WHERE winner = 'Eugene O\'Neill'
 
-// standard backslash to escape
+/* standard backslash to escape*/
 
-13. 
+13. SELECT winner, yr, subject
+FROM nobel
+WHERE winner LIKE 'Sir %'
+ORDER BY yr DESC, winner ASC
+
+14. SELECT winner, subject
+FROM nobel
+WHERE yr=1984
+ORDER BY 
+ CASE WHEN subject IN ('Chemistry', 'Physics') THEN 1
+ ELSE 0 END, subject, winner;
 
